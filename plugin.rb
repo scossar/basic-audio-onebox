@@ -18,7 +18,7 @@ after_initialize do
       @@audio_files ||= Set.new ["mp3", "ogg", "wav"]
     end
 
-    def audio_files_regexp
+    def self.audio_files_regexp
       @@audio_files_regexp ||= /\.(#{audio_files.to_a.join("|")})$/i
     end
   end
