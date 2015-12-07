@@ -36,46 +36,11 @@ after_initialize do
       if FileHelper.is_image?(upload.original_filename)
         "<img src='#{upload.url}' width='#{upload.width}' height='#{upload.height}'>"
       elsif FileHelper.is_audio_file?(upload.original_filename)
-        # upload_base_url + upload.url
+        # The newlines are required here to get it to onebox
         "\n#{upload_base_url}#{upload.url}\n"
       else
         "<a class='attachment' href='#{upload.url}'>#{upload.original_filename}</a> (#{number_to_human_size(upload.filesize)})"
       end
     end
-
-    # def create_post_with_attachments(user, post_options={})
-    #   options = {
-    #       cooking_options: { traditional_markdown_linebreaks: true },
-    #   }.merge(post_options)
-
-      # raw = options[:raw]
-
-      # deal with attachments
-      # @message.attachments.each do |attachment|
-      #   tmp = Tempfile.new("discourse-email-attachment")
-      #   begin
-          # read attachment
-          # File.open(tmp.path, "w+b") { |f| f.write attachment.body.decoded }
-          # create the upload for the user
-          # upload = Upload.create_for(user.id, tmp, attachment.filename, tmp.size)
-          # if upload && upload.errors.empty?
-            # try to inline images
-            # if attachment.content_type.start_with?("image/")
-            #   if raw =~ /\[image: Inline image \d+\]/
-            #     raw.sub!(/\[image: Inline image \d+\]/, attachment_markdown(upload))
-            #     next
-            #   end
-            # end
-            # raw << "\n\n#{attachment_markdown(upload)}\n\n"
-          # end
-        # ensure
-        #   tmp.close!
-        # end
-      # end
-
-      # options[:raw] = raw
-
-      # create_post(user, options)
-    # end
   end
 end
