@@ -1,5 +1,5 @@
 # name: Basic Audio Player
-# about: Returns audio tags for uploaded audio files
+# about: Returns the absolute path to audio file uploads so that they are oneboxed
 # version: 0.1
 # authors: scossar
 # url: https://github.com/scossar/basic-audio-player
