@@ -1,3 +1,3 @@
-## An HTML5 audio player for Discourse
+### Basic audio player for Discourse
 
-Allows audio uploads to be oneboxed.
+Automatically oneboxes audio file uploads.
